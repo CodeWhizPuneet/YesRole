@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400..700;1,400..700&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Public+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-lowest":"#ffffff","surface-container-low":"#f8fafc","tertiary-container":"#e0f2fe","secondary-container":"#f1f5f9","on-primary-fixed-variant":"#00419d","primary-fixed":"#dbeafe","on-error-container":"#991b1b","primary-fixed-dim":"#bfdbfe","tertiary-fixed-dim":"#bae6fd","on-surface-variant":"#64748b","on-primary-container":"#1e3a8a","error":"#ef4444","inverse-on-surface":"#f8fafc","on-primary":"#ffffff","secondary":"#475569","on-surface":"#0f172a","outline":"#cbd5e1","on-secondary":"#ffffff","inverse-primary":"#93c5fd","on-error":"#ffffff","inverse-surface":"#1e293b","surface":"#fafafa","background":"#fafafa","on-secondary-fixed":"#0f172a","on-secondary-container":"#334155","on-background":"#0f172a","surface-variant":"#f1f5f9","error-container":"#fef2f2","surface-container-highest":"#e2e8f0","primary":"#3366cc","surface-tint":"#3366cc","secondary-fixed":"#e2e8f0","surface-container":"#ffffff","on-primary-fixed":"#172554","tertiary-fixed":"#e0f2fe","primary-container":"#3366cc","on-tertiary-container":"#0369a1","surface-dim":"#f1f5f9","outline-variant":"#e2e8f0","surface-bright":"#ffffff","on-tertiary":"#ffffff","on-secondary-fixed-variant":"#334155","secondary-fixed-dim":"#cbd5e1","on-tertiary-fixed-variant":"#0284c7","on-tertiary-fixed":"#082f49","surface-container-high":"#f8fafc","tertiary":"#0284c7"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-2xl":"3rem","space-lg":"1.5rem","space-xs":"0.25rem","gutter-desktop":"1.5rem","margin-tablet":"1.5rem","margin":"1rem","space-xl":"2rem","space-2xs":"0.125rem","margin-desktop":"2.5rem","gutter":"1rem","space-md":"0.75rem","space-sm":"0.5rem","space-base":"1rem"},fontFamily:{"body-lg":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"headline-lg":["Noto Serif","serif"],"label-caps":["Public Sans","sans-serif"],"display-hero":["Noto Serif","serif"],"metric-stat":["Inter","sans-serif"],"display-hero-mobile":["Noto Serif","serif"],"label-mono":["JetBrains Mono","monospace"],"headline-lg-mobile":["Noto Serif","serif"],"headline-md":["Noto Serif","serif"],"headline-sm":["Noto Serif","serif"]},fontSize:{"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0.005em","fontWeight":"400"}],"headline-lg":["30px",{"lineHeight":"38px","letterSpacing":"-0.025em","fontWeight":"600"}],"label-caps":["11px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.03em","fontWeight":"600"}],"metric-stat":["36px",{"lineHeight":"44px","letterSpacing":"-0.03em","fontWeight":"600"}],"display-hero-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-mono":["12px",{"lineHeight":"16px","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"30px","letterSpacing":"-0.015em","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"500"}]}}}}</script></head><body class="bg-background text-on-surface font-body-md text-body-md antialiased"><main class="min-h-screen w-full flex flex-col items-center bg-background"><div class="flex flex-col w-full">
+<!-- LIGHT EDITORIAL TOP NAVIGATION -->
+<nav class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-outline-variant">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-desktop h-16 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">YesRole</span>
+</div>
+<div class="hidden md:flex items-center gap-6 text-on-surface-variant font-body-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#product">Product</a>
+<a class="hover:text-primary transition-colors" href="#how-it-works">How It Works</a>
+<a class="hover:text-primary transition-colors" href="#demo-interactive">Live Audit</a>
+<a class="hover:text-primary transition-colors" href="#architecture">Architecture</a>
+</div>
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex px-3.5 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm font-medium transition-colors" href="#demo-interactive">Sign In</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-white font-body-sm font-semibold hover:bg-primary/90 shadow-sm transition-all duration-150" href="#demo-interactive">
+<span>Get Started</span>
+<span class="material-symbols-outlined text-body-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- AMBIENT TOP LIGHT FIELD -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="absolute top-20 right-10 w-[300px] h-[300px] bg-blue-100/40 blur-[100px] rounded-full pointer-events-none"></div>
+<!-- HERO SECTION -->
+<section class="relative max-w-7xl mx-auto px-margin md:px-margin-desktop pt-space-xl pb-space-2xl flex flex-col items-center text-center">
+<!-- SYSTEM CAPABILITY BADGE -->
+<div class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-surface-container-high border border-outline-variant text-primary font-label-mono text-label-mono shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>Semantic AI Matching • Explainable Insights • ATS Readability</span>
+</div>
+<!-- MAIN HEADLINE -->
+<h1 class="mt-space-lg font-display-hero text-display-hero text-on-surface max-w-4xl tracking-tight">
+        Your Resume Deserves a <span class="text-primary">Better Chance.</span>
+</h1>
+<!-- SUBTITLE -->
+<p class="mt-space-md font-body-lg text-body-lg text-secondary max-w-2xl">
+        Stop guessing what recruiters are looking for. Align your resume with real job requirements using intelligent AI analysis, discover missing evidence, and apply with confidence.
+      </p>
+<!-- CALL TO ACTION CLUSTER -->
+<div class="mt-space-xl flex flex-col sm:flex-row items-center gap-space-md">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-lg bg-primary text-on-primary font-body-md text-body-md font-semibold hover:bg-primary/90 shadow-sm hover:shadow transition-all duration-200" href="#demo-interactive">
+<span>Analyze My Resume</span>
+<span class="material-symbols-outlined text-body-lg">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface font-body-md text-body-md font-medium hover:bg-surface-variant transition-colors duration-200 shadow-sm" href="#how-it-works">
+<span>See How It Works</span>
+<span class="material-symbols-outlined text-body-lg text-secondary">play_circle</span>
+</a>
+</div>
+<!-- FLOATING SAAS PREVIEW COCKPIT -->
+<div class="mt-space-2xl w-full max-w-5xl rounded-xl bg-surface-container border border-outline-variant p-space-md sm:p-space-lg shadow-xl relative text-left" id="demo-interactive">
+<!-- COCKPIT WINDOW HEADER -->
+<div class="flex items-center justify-between pb-space-md mb-space-md border-b border-outline-variant">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 rounded-full bg-slate-300"></span>
+<span class="w-3 h-3 rounded-full bg-slate-300"></span>
+<span class="w-3 h-3 rounded-full bg-slate-300"></span>
+<span class="ml-space-xs font-label-mono text-label-mono text-on-surface-variant">yesrole-session-v4.2 // runtime-active</span>
+</div>
+<div class="flex items-center gap-space-xs bg-emerald-50 border border-emerald-200/60 px-2.5 py-1 rounded-md">
+<span class="material-symbols-outlined text-body-sm text-emerald-600">verified_user</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-emerald-700 font-semibold">Deterministic Engine</span>
+</div>
+</div>
+<!-- 3-COLUMN COCKPIT GRID -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- LEFT: DOCUMENT STATE & ATTRS -->
+<div class="lg:col-span-4 flex flex-col gap-space-sm">
+<div class="rounded-lg bg-surface-container-high border border-outline-variant p-space-md">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider block mb-1">Source Artifact</span>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-headline-sm">description</span>
+<div class="min-w-0 flex-1">
+<div class="font-body-sm text-body-sm text-on-surface font-medium truncate">Senior_Product_Designer_2025.pdf</div>
+<div class="font-label-mono text-label-mono text-on-surface-variant">94 KB • PDF-1.7 • Parsed</div>
+</div>
+</div>
+</div>
+<!-- PARSING INTEGRITY METRICS -->
+<div class="rounded-lg bg-surface-container-high border border-outline-variant p-space-md flex flex-col gap-space-xs">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-secondary">ATS Structure Cleanliness</span>
+<span class="font-label-mono text-label-mono text-primary font-semibold">98.4%</span>
+</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 98.4%;"></div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-mono text-label-mono pt-1">
+<span>Single-column AST</span>
+<span class="text-emerald-600 font-medium">Zero Encoding Drift</span>
+</div>
+</div>
+<!-- DETECTED MATCH PROFILE -->
+<div class="rounded-lg bg-surface-container-lowest border border-outline-variant p-space-md shadow-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider block mb-2">Target Calibration</span>
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-body-sm text-body-sm font-semibold">Staff UX / Systems Designer</span>
+<span class="font-label-mono text-label-mono text-secondary">Tier 1 Fintech</span>
+</div>
+<div class="mt-2 flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant text-on-surface text-label-mono font-label-mono">Design Systems</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant text-on-surface text-label-mono font-label-mono">Token Ops</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant text-on-surface text-label-mono font-label-mono">WCAG 2.2</span>
+</div>
+</div>
+</div>
+<!-- CENTER: CIRCULAR RADIAL METRIC GAUGES -->
+<div class="lg:col-span-4 flex flex-col items-center justify-center p-space-md rounded-lg bg-surface-container-high border border-outline-variant text-center relative overflow-hidden">
+<div class="relative w-44 h-44 flex items-center justify-center my-2">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 120 120">
+<circle class="text-slate-200" cx="60" cy="60" fill="transparent" r="50" stroke="currentColor" stroke-width="7"></circle>
+<circle class="text-primary" cx="60" cy="60" fill="transparent" r="50" stroke="currentColor" stroke-dasharray="314.159" stroke-dashoffset="50.26" stroke-linecap="round" stroke-width="7"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-metric-stat text-metric-stat text-on-surface font-semibold">84<span class="text-primary text-headline-md">%</span></span>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider font-semibold">High Alignment</span>
+</div>
+</div>
+<div class="mt-space-xs font-body-sm text-body-sm text-on-surface font-medium">Confidence Coefficient: Strong</div>
+<p class="font-label-mono text-label-mono text-on-surface-variant max-w-xs mt-1">
+              Parsed against 38 requirement vectors across experience, execution, and domain scope.
+            </p>
+</div>
+<!-- RIGHT: ACTIONABLE SIGNALS & DELTAS -->
+<div class="lg:col-span-4 flex flex-col gap-space-sm">
+<div class="rounded-lg bg-surface-container-high border border-outline-variant p-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Semantic Gaps</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container border border-red-200 text-error text-label-mono font-label-mono font-semibold">4 Critical</span>
+</div>
+<div class="mt-space-xs space-y-1.5">
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-error text-body-sm">priority_high</span>
+<span>Missing ROI metric in Workday revamps</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-error text-body-sm">priority_high</span>
+<span>Uncited WCAG AAA compliance testing</span>
+</div>
+</div>
+</div>
+<!-- ANCHORED STRENGTH INDICATOR -->
+<div class="rounded-lg bg-surface-container-high border border-outline-variant p-space-md">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider block mb-1 font-semibold">Strongest Match Vector</span>
+<div class="text-on-surface font-body-sm text-body-sm font-medium">Design Systems &amp; Cross-functional Leadership</div>
+<div class="mt-1 font-label-mono text-label-mono text-on-surface-variant">Validated in 3 role tenures (2019-2024)</div>
+</div>
+<!-- REAL-TIME LIFT TABS -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="rounded-lg bg-surface-container-lowest border border-outline-variant p-2.5 shadow-sm">
+<span class="font-label-mono text-label-mono text-primary font-semibold block">+12% Match</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Metric phrasing</span>
+</div>
+<div class="rounded-lg bg-surface-container-lowest border border-outline-variant p-2.5 shadow-sm">
+<span class="font-label-mono text-label-mono text-emerald-600 font-semibold block">3 Bridged</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Semantic voids</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RECENT CALIBRATION TIMELINE CHIP BAR -->
+<div class="mt-space-md pt-space-sm flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-high border border-outline-variant px-space-md py-2.5 rounded-lg">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-mono text-label-mono text-on-surface-variant font-medium">Automated Recommendations:</span>
+<span class="px-2.5 py-0.5 rounded-full bg-white border border-outline-variant text-on-surface font-body-sm text-body-sm shadow-xs">Lead with "Led migration to token architecture"</span>
+<span class="px-2.5 py-0.5 rounded-full bg-white border border-outline-variant text-on-surface font-body-sm text-body-sm shadow-xs">Quantify 40% dev velocity gain</span>
+</div>
+<button class="text-primary hover:underline font-label-mono text-label-mono font-medium flex items-center gap-1">
+<span>Inspect Evidence Graph</span>
+<span class="material-symbols-outlined text-body-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- WORKFLOW VISUAL EVIDENCE STRIP (PHOTO RICH) -->
+<section class="w-full max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant p-space-lg flex flex-col justify-end min-h-[260px] group shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center opacity-15 group-hover:scale-105 transition-transform duration-500" data-alt="A modern developer workspace with dual monitors displaying code terminal outputs, AST graph trees, and clean semantic data visualizations in cyan and dark obsidian tones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVCo1Uikv02Y-YkQED0pJrfgEQyaimZbulh9fz-MQrdZXPpxxkT4p_Dl5TqZ80is--fuUngEs-KRj_NObTBrOjjI2nUJO4XpfTYL-5fP7fk_-5ht4NfmdthJ4Wd8ixqCcQs9TulsT5uOv8YK3tCAZmKrVFtsiYBIGik1Asp85E3Wd0XrTy6NxzrxpteMkHNzq8APVfGNCRE0j10Y6gf4kRe6er2DT5l5K0FmZ-XAE')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
+<div class="relative z-10">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider block mb-1 font-semibold">Stage 01</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Deterministic Parsing</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Extract deep entity nodes without arbitrary hallucination or destructive truncation.</p>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant p-space-lg flex flex-col justify-end min-h-[260px] group shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center opacity-15 group-hover:scale-105 transition-transform duration-500" data-alt="Close up architectural detail of sleek computational hardware nodes with minimal cyan status indicators emitting a calm controlled light" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_pSBWFG7I-N3nvpdlAGSoPJ1Ji7u5z2emoOB0xm7MqGUurUNnTFHtTlGeGty1Qkyz7m-sm2xIjUx-GY15XyhSttlDyR2KvOmwLP_lwc61fHhUdIe1oiBzCtFrCXqQQK70uOqWsOW8sb3kehLesewe2xotOIdog7ZbBkf-AnRH9VupCurSFet1KrhgLMn-ZbhM2kdYces94UEskap-KXiWAo4P3D4KVM8xC6Ff82k')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
+<div class="relative z-10">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider block mb-1 font-semibold">Stage 02</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Vector Requirement Matrix</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Break role requisites into distinct weights: non-negotiable, contextual, and additive.</p>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant p-space-lg flex flex-col justify-end min-h-[260px] group shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center opacity-15 group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic clean minimal design studio showing an organized high precision productivity environment with soft moody ambient lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCv3YotriVDZ3sxHYHiBRVaLwpucfA6C-z7fYlBHp7pWh5UkCbx5wavgP9LL7iV-x5Svq1V2qGnnsyv2-oQMkmPEwHXWyfivPUtwp0nyQ8rhIRGtAcX-_QpdDV3GF9enZNudtgEmS22y8wL__Xmfpa-QvutKuVA3kIVEpelr7Et0JYyn92V10vcamp_6q7ewNsJM8v3d1lEZ7J5npZkH8e1SLjN-QZWYhpkgpH-5jI')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
+<div class="relative z-10">
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-wider block mb-1 font-semibold">Stage 03</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Evidence Attribution</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Ensure every resume bullet has provable corroboration against the recruiter checklist.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FEATURES GRID SECTION -->
+<section class="w-full max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl">
+<div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-xl">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest font-semibold">Architectural Superiority</span>
+<h2 class="mt-space-xs font-headline-lg text-headline-lg text-on-surface font-semibold">
+        Engineered for Explainable Alignment, Not Generic Fluff.
+      </h2>
+<p class="mt-space-sm font-body-md text-body-md text-secondary">
+        Most tools randomly stuff keywords into your resume. YesRole applies contextual NLP to map your true achievements against exact recruiter rubrics.
+      </p>
+</div>
+<!-- 6 BESPOKE BENTO/GRID TILES -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- 1. Semantic Resume Matching -->
+<div class="rounded-xl bg-surface-container border border-outline-variant p-space-lg flex flex-col justify-between hover:border-primary/50 hover:shadow-md transition-all duration-200">
+<div>
+<div class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-headline-sm">hub</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Semantic Resume Matching</h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary">
+            Not simple keyword stuffing; deep contextual embedding analysis that understands synonyms, domain scope, and seniority equivalence.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-xs text-primary font-label-mono text-label-mono font-medium">
+<span>Multi-dimensional embeddings</span>
+<span class="material-symbols-outlined text-body-sm">arrow_forward</span>
+</div>
+</div>
+<!-- 2. Job Requirement Analysis -->
+<div class="rounded-xl bg-surface-container border border-outline-variant p-space-lg flex flex-col justify-between hover:border-primary/50 hover:shadow-md transition-all duration-200">
+<div>
+<div class="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-secondary mb-space-md">
+<span class="material-symbols-outlined text-headline-sm">splitscreen</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Job Requirement Analysis</h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary">
+            Deconstructs complex job listings into mandatory prerequisites, day-to-day responsibilities, and bonus nice-to-haves with clear weights.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-xs text-secondary font-label-mono text-label-mono font-medium">
+<span>Weighted qualification trees</span>
+<span class="material-symbols-outlined text-body-sm">arrow_forward</span>
+</div>
+</div>
+<!-- 3. ATS Readability Checks -->
+<div class="rounded-xl bg-surface-container border border-outline-variant p-space-lg flex flex-col justify-between hover:border-primary/50 hover:shadow-md transition-all duration-200">
+<div>
+<div class="w-10 h-10 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-tertiary mb-space-md">
+<span class="material-symbols-outlined text-headline-sm">fact_check</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">ATS Readability Checks</h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary">
+            Rigorous parsing tests for table traps, multi-column corruption, font encoding sanity, and header tiering compatible with major applicant systems.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-xs text-tertiary font-label-mono text-label-mono font-medium">
+<span>Greenhouse • Lever • Workday verified</span>
+<span class="material-symbols-outlined text-body-sm">arrow_forward</span>
+</div>
+</div>
+<!-- 4. AI Resume Optimization Studio -->
+<div class="rounded-xl bg-surface-container border border-outline-variant p-space-lg flex flex-col justify-between hover:border-primary/50 hover:shadow-md transition-all duration-200">
+<div>
+<div class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-headline-sm">edit_note</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">AI Resume Optimization Studio</h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary">
+            Side-by-side editing interface offering prioritized phrasing suggestions that transform generic tasks into quantified achievement statements.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-xs text-primary font-label-mono text-label-mono font-medium">
+<span>In-line revision canvas</span>
+<span class="material-symbols-outlined text-body-sm">arrow_forward</span>
+</div>
+</div>
+<!-- 5. Missing Skills & Evidence Detection -->
+<div class="rounded-xl bg-surface-container border border-outline-variant p-space-lg flex flex-col justify-between hover:border-primary/50 hover:shadow-md transition-all duration-200">
+<div>
+<div class="w-10 h-10 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-error mb-space-md">
+<span class="material-symbols-outlined text-headline-sm">troubleshoot</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Missing Skills &amp; Evidence Detection</h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary">
+            Pinpoints unsupported job claims with concrete prompt guidance, nudging you to articulate past real projects that demonstrate the requirement.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-xs text-error font-label-mono text-label-mono font-medium">
+<span>Evidence corroboration engine</span>
+<span class="material-symbols-outlined text-body-sm">arrow_forward</span>
+</div>
+</div>
+<!-- 6. Before & After Impact Comparison -->
+<div class="rounded-xl bg-surface-container border border-outline-variant p-space-lg flex flex-col justify-between hover:border-primary/50 hover:shadow-md transition-all duration-200">
+<div>
+<div class="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-secondary mb-space-md">
+<span class="material-symbols-outlined text-headline-sm">analytics</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Before &amp; After Impact Comparison</h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary">
+            Measurable score improvements and delta visualization. Gain total transparency into how each wording change lifts your ATS match index.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-xs text-secondary font-label-mono text-label-mono font-medium">
+<span>Live delta auditing</span>
+<span class="material-symbols-outlined text-body-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS SECTION -->
+<section class="w-full max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl" id="how-it-works">
+<div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-2xl">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest font-semibold">Protocol Sequence</span>
+<h2 class="mt-space-xs font-headline-lg text-headline-lg text-on-surface font-semibold">
+        Three Deliberate Steps to Full Alignment
+      </h2>
+<p class="mt-space-sm font-body-md text-body-md text-secondary">
+        Engineered for rapid iteration with zero data selling, intrusive ads, or forced subscription paywalls.
+      </p>
+</div>
+<!-- SEQUENTIAL STEPPERS -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg relative">
+<!-- Step 1 -->
+<div class="flex flex-col rounded-xl bg-surface-container border border-outline-variant p-space-lg relative shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-metric-stat text-metric-stat text-primary font-bold">01</span>
+<span class="w-9 h-9 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-body-md">upload_file</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Upload Your Resume</h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary">
+          Drag and drop PDF or DOCX files. Our parser executes local structural segmentation within milliseconds without corrupting character encodings.
+        </p>
+<div class="mt-space-lg p-space-sm rounded-lg bg-surface-container-high border border-outline-variant font-label-mono text-label-mono text-on-surface-variant">
+          Supported: PDF (1.3-2.0), DOCX, TXT
+        </div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col rounded-xl bg-surface-container border border-outline-variant p-space-lg relative shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-metric-stat text-metric-stat text-secondary font-bold">02</span>
+<span class="w-9 h-9 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-body-md">content_paste_search</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Paste Your Dream Job</h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary">
+          Input the exact role title, requirements list, and company culture statements. The analyzer strips recruiter jargon to locate core competencies.
+        </p>
+<div class="mt-space-lg p-space-sm rounded-lg bg-surface-container-high border border-outline-variant font-label-mono text-label-mono text-on-surface-variant">
+          URL ingestion • Raw text paste • JD parsing
+        </div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col rounded-xl bg-surface-container border border-outline-variant p-space-lg relative shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-metric-stat text-metric-stat text-tertiary font-bold">03</span>
+<span class="w-9 h-9 rounded-full bg-sky-50 border border-sky-100 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-body-md">rocket_launch</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Analyze, Optimize &amp; Apply</h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary">
+          Receive an instant semantic score, dive into the evidence explorer to fix unsupported gaps, and export a clean, guaranteed ATS-ready resume file.
+        </p>
+<div class="mt-space-lg p-space-sm rounded-lg bg-surface-container-high border border-outline-variant font-label-mono text-label-mono text-on-surface-variant">
+          Export: Clean PDF, Markdown, Plain Text
+        </div>
+</div>
+</div>
+</section>
+<!-- ATS SYSTEM DIAGNOSTIC VISUALIZATION (DATA DENSITY) -->
+<section class="w-full max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-xl">
+<div class="rounded-xl bg-surface-container border border-outline-variant p-space-lg sm:p-space-xl shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-5">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider block mb-1 font-semibold">Explainable Reasoning</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-semibold">
+            See Exactly Why Recruiters Move You Forward
+          </h3>
+<p class="mt-space-sm font-body-md text-body-md text-secondary">
+            Traditional AI gives vague answers like "make it more impactful." YesRole highlights the exact sentence in your resume and correlates it with requirement clause #4 in the recruiter spec.
+          </p>
+<div class="mt-space-lg space-y-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-headline-sm mt-0.5">check_circle</span>
+<div>
+<span class="font-body-md text-body-md font-semibold text-on-surface block">Zero Black Box Scoring</span>
+<span class="font-body-sm text-body-sm text-secondary">Every point in your score corresponds to an identifiable qualification tag.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-headline-sm mt-0.5">check_circle</span>
+<div>
+<span class="font-body-md text-body-md font-semibold text-on-surface block">Anti-Hallucination Guardrails</span>
+<span class="font-body-sm text-body-sm text-secondary">We never invent fake employers, degrees, or unearned certifications.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- LIVE AUDIT PREVIEW CARD -->
+<div class="lg:col-span-7 rounded-lg bg-surface-container-high border border-outline-variant p-space-md font-label-mono text-label-mono">
+<div class="flex items-center justify-between pb-2 mb-3 bg-white border border-outline-variant px-3 py-1.5 rounded text-on-surface shadow-xs">
+<span class="text-primary font-semibold"># ATS Alignment Proof Engine</span>
+<span class="text-on-surface-variant text-label-caps uppercase font-semibold">Grammar Graph Validated</span>
+</div>
+<div class="space-y-2 text-body-sm font-body-sm">
+<!-- JD SPEC LINE -->
+<div class="bg-white border border-outline-variant p-2.5 rounded shadow-xs">
+<div class="text-on-surface-variant font-label-mono text-label-mono uppercase text-xs mb-1 font-semibold">Job Spec Clause 03:</div>
+<div class="text-on-surface italic">"Experience scaling design tokens across multi-platform native and web applications."</div>
+</div>
+<!-- COMPARATIVE EVAL -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
+<!-- ORIGINAL -->
+<div class="bg-white border border-outline-variant p-2.5 rounded shadow-xs">
+<div class="text-error font-label-mono text-label-mono text-xs mb-1 font-semibold">× Current Resume:</div>
+<div class="text-secondary">"Updated component library colors in Figma."</div>
+<div class="mt-2 text-label-caps uppercase text-error font-semibold">Match: 28% (Weak)</div>
+</div>
+<!-- SUGGESTED -->
+<div class="bg-white border border-blue-200 p-2.5 rounded shadow-xs">
+<div class="text-primary font-label-mono text-label-mono text-xs mb-1 font-semibold">✓ YesRole Recommendation:</div>
+<div class="text-on-surface">"Orchestrated cross-platform design token pipeline, unifying 140+ components across iOS, Android, and Web."</div>
+<div class="mt-2 text-label-caps uppercase text-primary font-semibold">Match: 96% (Corroborated)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL CALL TO ACTION BANNER -->
+<section class="w-full max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl">
+<div class="relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant p-space-xl sm:p-space-2xl text-center flex flex-col items-center shadow-lg">
+<!-- Subtle light tint ambient background -->
+<div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none"></div>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest relative z-10 font-semibold">Deploy With Certainty</span>
+<h2 class="mt-space-xs font-display-hero text-display-hero-mobile sm:text-display-hero text-on-surface font-semibold max-w-3xl relative z-10">
+        Make Your Experience Count.
+      </h2>
+<p class="mt-space-md font-body-lg text-body-lg text-secondary max-w-xl relative z-10">
+        Stop sending blind applications into the void. Verify your match before you hit submit.
+      </p>
+<div class="mt-space-xl relative z-10">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-xl py-3.5 rounded-lg bg-primary text-on-primary font-body-md text-body-md font-semibold hover:bg-primary/90 shadow-md hover:shadow-lg transition-all duration-200" href="#demo-interactive">
+<span>Start Optimizing for Free</span>
+<span class="material-symbols-outlined text-body-lg">arrow_forward</span>
+</a>
+</div>
+<span class="mt-space-sm font-label-mono text-label-mono text-on-surface-variant relative z-10">No credit card required • 100% private ATS sandbox</span>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="w-full bg-white border-t border-outline-variant mt-space-2xl">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- BRAND & COPYRIGHT -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md text-center sm:text-left">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">YesRole</span>
+</div>
+<span class="hidden sm:inline text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 YesRole Inc. All rights reserved.</span>
+</div>
+<!-- RIGID ARCHITECTURAL LINKS -->
+<div class="flex flex-wrap items-center justify-center gap-space-md text-on-surface-variant font-body-sm text-body-sm">
+<a class="hover:text-primary transition-colors" href="#product">Product</a>
+<a class="hover:text-primary transition-colors" href="#security">Security</a>
+<a class="hover:text-primary transition-colors" href="#architecture">Architecture</a>
+<a class="hover:text-primary transition-colors" href="#privacy">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#terms">Terms</a>
+<a class="hover:text-primary transition-colors" href="#api">API Documentation</a>
+</div>
+</div>
+</footer>
+</div></main></body></html>

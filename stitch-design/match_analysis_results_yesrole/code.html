@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Public+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f8fafc",
+            "surface-container": "#f1f5f9",
+            "surface-container-high": "#e2e8f0",
+            "surface-container-highest": "#cbd5e1",
+            "surface": "#f8fafc",
+            "background": "#f8fafc",
+            "primary": "#3366cc",
+            "primary-container": "#e8eefa",
+            "primary-dark": "#094cb2",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#094cb2",
+            "secondary": "#475569",
+            "secondary-container": "#f1f5f9",
+            "on-secondary": "#ffffff",
+            "on-surface": "#0f172a",
+            "on-surface-variant": "#475569",
+            "outline": "#cbd5e1",
+            "outline-variant": "#e2e8f0",
+            "error": "#ef4444",
+            "error-container": "#fee2e2",
+            "warning": "#f59e0b",
+            "warning-container": "#fef3c7",
+            "success": "#10b981",
+            "success-container": "#d1fae5"
+          },
+          fontFamily: {
+            headline: ["Noto Serif", "serif"],
+            display: ["Noto Serif", "serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+<!-- Alexandria Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col justify-between shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
+<div class="flex flex-col">
+<!-- Brand Logo Area -->
+<div class="h-16 px-5 flex items-center gap-3 border-b border-outline-variant">
+<img alt="YesRole Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDTPW_j2I2C4fYTfgecL86VmdsEDvyZiEFMwnYPGlsZYqZvlsn20Klln20lCPwGQTgNlplSissdAZUZNWt3VuYiBpcNPHCLRaNbZPz7bo08wu6gahbuSfeYBoObMRMd2r0hC3F6DZLU7xrjLMnoi89CzgUkqlLgdms-iZ15BazPwB_NoYrIzNHDjqmwLdXrBU9bGSUP8j7rin9wOfpKo1EIml8r4sHM96aHTHH3at8W"/>
+<div class="flex flex-col">
+<span class="font-headline text-lg font-bold text-on-surface tracking-tight leading-tight">YesRole</span>
+<span class="font-label text-[10px] tracking-wider uppercase font-semibold text-primary">Alexandria AI Core</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="px-3.5 mt-5">
+<span class="text-[11px] font-label font-bold uppercase tracking-wider text-slate-400 px-3">Navigation</span>
+<nav class="mt-2 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-medium text-sm" data-path="overview" href="#">
+<span class="material-symbols-outlined text-[19px] text-slate-400">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-medium text-sm" data-path="new-analysis" href="#">
+<span class="material-symbols-outlined text-[19px] text-slate-400">auto_awesome</span>
+<span>New Analysis</span>
+</a>
+<a aria-current="page" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary-container text-primary font-semibold text-sm transition-colors shadow-sm" data-path="match-report" href="#">
+<span class="material-symbols-outlined text-[19px] text-primary">analytics</span>
+<span>Match Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-medium text-sm" data-path="optimization-studio" href="#">
+<span class="material-symbols-outlined text-[19px] text-slate-400">draw</span>
+<span>Optimization Studio</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-medium text-sm" data-path="before-and-after" href="#">
+<span class="material-symbols-outlined text-[19px] text-slate-400">compare</span>
+<span>Before &amp; After</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-medium text-sm" data-path="my-resumes" href="#">
+<span class="material-symbols-outlined text-[19px] text-slate-400">description</span>
+<span>My Resumes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-medium text-sm" data-path="history" href="#">
+<span class="material-symbols-outlined text-[19px] text-slate-400">history</span>
+<span>Analysis History</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-medium text-sm" data-path="settings" href="#">
+<span class="material-symbols-outlined text-[19px] text-slate-400">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Sidebar Bottom Status -->
+<div class="p-4 border-t border-outline-variant bg-surface-container-low flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary ring-2 ring-primary/20"></span>
+<span class="font-mono text-xs font-semibold text-primary">v2.4 Core Active</span>
+</div>
+<span class="font-label text-[10px] font-bold text-slate-600 bg-white border border-slate-200 px-1.5 py-0.5 rounded shadow-2xs">PRO</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-mono text-xs text-slate-500">
+<span>Credits</span>
+<span class="text-slate-900 font-semibold">45 / 50 AI</span>
+</div>
+<div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[90%]"></div>
+</div>
+</div>
+<a class="flex items-center justify-between text-slate-500 hover:text-slate-800 transition-colors text-xs font-medium pt-1" href="#">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]">help</span>
+<span>Help &amp; Docs</span>
+</span>
+<span class="material-symbols-outlined text-[13px]">north_east</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="pl-64">
+<!-- Alexandria Header Bar -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-white/90 backdrop-blur-md border-b border-outline-variant z-40">
+<div class="h-16 w-full px-8 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label text-xs font-semibold text-primary">AI Semantic Matching</span>
+</div>
+<nav class="hidden lg:flex items-center gap-1">
+<a class="px-3 py-1.5 text-xs font-medium text-slate-500 hover:text-slate-900 rounded-md hover:bg-slate-100 transition-colors" data-path="overview" href="#">Overview</a>
+<a class="px-3 py-1.5 text-xs font-medium text-slate-500 hover:text-slate-900 rounded-md hover:bg-slate-100 transition-colors" data-path="new-analysis" href="#">New Analysis</a>
+<a aria-current="page" class="px-3 py-1.5 text-xs font-semibold text-primary bg-primary-container rounded-md" data-path="match-report" href="#">Match Report</a>
+<a class="px-3 py-1.5 text-xs font-medium text-slate-500 hover:text-slate-900 rounded-md hover:bg-slate-100 transition-colors" data-path="optimization-studio" href="#">Optimization Studio</a>
+<a class="px-3 py-1.5 text-xs font-medium text-slate-500 hover:text-slate-900 rounded-md hover:bg-slate-100 transition-colors" data-path="before-and-after" href="#">Before &amp; After</a>
+<a class="px-3 py-1.5 text-xs font-medium text-slate-500 hover:text-slate-900 rounded-md hover:bg-slate-100 transition-colors" data-path="my-resumes" href="#">My Resumes</a>
+<a class="px-3 py-1.5 text-xs font-medium text-slate-500 hover:text-slate-900 rounded-md hover:bg-slate-100 transition-colors" data-path="history" href="#">History</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface border border-outline-variant text-slate-500 cursor-pointer hover:border-slate-300 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-slate-400">search</span>
+<span class="text-xs text-slate-500">Search jobs, skills, resumes</span>
+<kbd class="px-1.5 py-0.5 rounded bg-slate-200/70 font-mono text-[10px] text-slate-700">⌘K</kbd>
+</div>
+<div class="hidden md:flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-mono text-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>Demo Mode: Sample Data</span>
+</div>
+<button aria-label="Notifications" class="p-1.5 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO7hHO71X_1t6blQ-G0MJtYTPRBWUPFpqyrwzoP3wUmDNT2-uGTul6b4GnJP90yGTCiJKP1PB_xttTr4-Sx4SsnEKiQ7QWmoAWOrWqT4QYoJTrHyORT-Xoe-pUsI0Bqk435EgVBmOzztPdDzyZxHjsWDZGYhjWH18N3A4RH6Y5fSPCauyIQd4XrthJjZjnGuyirW9Um3RvgGdbNw9xqiWCpqrv_8X4hM-DH_bE_Yw"/>
+</div>
+</div>
+</header>
+<!-- Main Container -->
+<main class="relative pt-16 bg-[#F8FAFC] min-h-screen">
+<div class="px-8 py-8 flex flex-col gap-8 max-w-7xl mx-auto">
+<!-- Top Action Bar & Page Meta Header -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-6 pb-2 border-b border-outline-variant/80">
+<div class="flex flex-col gap-2 max-w-3xl">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-outline-variant text-primary font-mono text-xs shadow-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                Scale AI • San Francisco, CA
+              </span>
+<span class="font-mono text-xs text-slate-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                Analyzed today at 10:42 AM • Model v2.4
+              </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-700 font-label text-[11px] font-bold tracking-wider uppercase">
+                Benchmark: 80%+
+              </span>
+</div>
+<h1 class="font-headline text-3xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
+              Your Resume Match Report
+              <span class="material-symbols-outlined text-primary text-[28px]">verified</span>
+</h1>
+<p class="text-sm text-slate-600 leading-relaxed font-body">
+              Target Role: <span class="text-slate-900 font-semibold">Staff Product Designer — Design Systems</span>. Understand strengths, quantify semantic alignment, and resolve strategic hiring gaps.
+            </p>
+</div>
+<!-- Action Button Group -->
+<div class="flex flex-wrap items-center gap-3">
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white border border-outline-variant text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-all text-xs font-semibold shadow-2xs" type="button">
+<span class="material-symbols-outlined text-[17px] text-slate-500">replay</span>
+<span>Start New Analysis</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white border border-outline-variant text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-all text-xs font-semibold shadow-2xs" type="button">
+<span class="material-symbols-outlined text-[17px] text-slate-500">download</span>
+<span>Download PDF</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2 rounded-lg bg-primary text-white font-medium text-xs hover:bg-primary-dark active:scale-[0.98] transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">magic_button</span>
+<span>Optimize My Resume</span>
+</button>
+</div>
+</div>
+<!-- Diagnostic Bento Grid: Circular Gauge + Metrics Breakdown -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Hero Score Gauge Card -->
+<div class="lg:col-span-5 bg-white border border-outline-variant rounded-xl p-7 flex flex-col justify-between shadow-[0_1px_4px_rgba(0,0,0,0.04)] relative">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs uppercase tracking-wider font-bold text-primary flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Primary Signal
+              </span>
+<span class="font-mono text-xs text-slate-500">Confidence: 99.4%</span>
+</div>
+<div class="flex flex-col items-center justify-center my-6">
+<div class="relative w-52 h-52 flex items-center justify-center">
+<!-- Radial SVG Gauge (Light Mode styling with Alexandria Sapphire) -->
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 160 160">
+<circle class="text-slate-100" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-primary transition-all duration-1000 ease-out" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-dasharray="439.82" stroke-dashoffset="96.76" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center text-center">
+<span class="font-headline text-5xl font-bold text-slate-900 tracking-tighter leading-none">
+                    78<span class="text-primary font-normal text-3xl">%</span>
+</span>
+<span class="font-label text-[11px] font-bold text-slate-500 uppercase tracking-widest mt-1">YesRole Index</span>
+</div>
+</div>
+<div class="mt-4 text-center">
+<h2 class="font-headline text-lg text-slate-900 font-bold">Strong Role Viability</h2>
+<p class="text-xs text-slate-500 mt-1 max-w-xs leading-relaxed">
+                  2.5% below the top candidate cohort (80%+). 3 targeted edits will lift this score into the top percentile.
+                </p>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-3 rounded-lg flex items-start gap-2 text-slate-600">
+<span class="material-symbols-outlined text-[17px] text-primary shrink-0 mt-0.5">info</span>
+<p class="text-xs leading-relaxed text-slate-600">
+                Sample illustrative alignment score synthesized against 26 role criteria and 4 years of verified candidate heuristics.
+              </p>
+</div>
+</div>
+<!-- Right Score Breakdown Progress Bars -->
+<div class="lg:col-span-7 bg-white border border-outline-variant rounded-xl p-7 flex flex-col justify-between shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant">
+<div>
+<h2 class="font-headline text-lg text-slate-900 font-bold">Dimension Breakdown</h2>
+<p class="text-xs text-slate-500">Multidimensional semantic vectors parsed from resume corpus</p>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded bg-slate-100 border border-slate-200 text-slate-700 font-medium">5 Dimensions</span>
+</div>
+<div class="flex flex-col gap-4 my-auto pt-4">
+<!-- Required Skills -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-800 font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+                    Required Skills Coverage
+                  </span>
+<span class="font-mono text-primary font-bold">85%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-slate-100 overflow-hidden border border-slate-200/60">
+<div class="h-full bg-primary rounded-full transition-all duration-700" style="width: 85%"></div>
+</div>
+</div>
+<!-- Semantic Relevance -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-800 font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">hub</span>
+                    Semantic Relevance &amp; Lexicon
+                  </span>
+<span class="font-mono text-primary font-bold">82%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-slate-100 overflow-hidden border border-slate-200/60">
+<div class="h-full bg-primary rounded-full transition-all duration-700" style="width: 82%"></div>
+</div>
+</div>
+<!-- Experience Alignment -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-800 font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-indigo-600 text-[16px]">timeline</span>
+                    Seniority &amp; Scope Alignment
+                  </span>
+<span class="font-mono text-indigo-600 font-bold">75%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-slate-100 overflow-hidden border border-slate-200/60">
+<div class="h-full bg-indigo-600 rounded-full transition-all duration-700" style="width: 75%"></div>
+</div>
+</div>
+<!-- Evidence Quality -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-800 font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-500 text-[16px]">fact_check</span>
+                    Evidence Quality &amp; Metric Grounding
+                  </span>
+<span class="font-mono text-slate-600 font-bold">70%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-slate-100 overflow-hidden border border-slate-200/60">
+<div class="h-full bg-slate-500 rounded-full transition-all duration-700" style="width: 70%"></div>
+</div>
+</div>
+<!-- Preferred Skills -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-800 font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-amber-600 text-[16px]">stars</span>
+                    Preferred &amp; Value-Add Skills
+                  </span>
+<span class="font-mono text-amber-600 font-bold">65%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-slate-100 overflow-hidden border border-slate-200/60">
+<div class="h-full bg-amber-500 rounded-full transition-all duration-700" style="width: 65%"></div>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant flex items-center justify-between text-slate-500 font-mono text-xs">
+<span>Parsing Protocol: Standardized JSON-LD</span>
+<span class="text-primary hover:underline cursor-pointer font-medium">Re-run Weighted Analysis</span>
+</div>
+</div>
+</div>
+<!-- Candidate Context & Seniority Match Spotlight Card -->
+<div class="bg-white border border-outline-variant rounded-xl p-6 flex flex-col md:flex-row items-center gap-6 shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+<div class="w-full md:w-48 h-32 rounded-lg bg-slate-100 overflow-hidden shrink-0 relative border border-slate-200">
+<img class="w-full h-full object-cover" data-alt="Futuristic software engineering cockpit with dark ambient UI screens showing high precision vector diagrams and graphs in deep blues and vibrant luminous teal glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOqs3ZQq2a-KAerjbPEuS4zFKCNvU4K3S5wgOdGLMvcb3mwkHthpTARhULuXz_WpXsWPctSv6HpJLZk2xa5RmLPB2fslvNnskSTNxiRu8euSI2GgbHL9l2HXts1BxaYEQAMKm9NgTZ-h1wmghK1N6OHWK2P3gZGdcTHvXjdhSzpXxzigqooONQ_PtvRRl_s6jy6FY8dNr8ZAXsGYRN8VNfNG68iDmJe04NubJKOxI"/>
+<div class="absolute inset-0 bg-slate-900/40 backdrop-blur-[1px] flex items-center justify-center">
+<span class="font-label text-[10px] uppercase font-bold bg-white text-primary px-2 py-0.5 rounded shadow-sm">Live Profile Match</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-headline text-base font-bold text-slate-900">Role Fit Diagnosis: Staff-Level Systems Mastery</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-primary font-mono text-xs font-semibold">Tier-1 Fit</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Your resume demonstrates high-density architectural leadership at hyper-growth tech companies. While the technical core (Design Systems, Figma API, Tokenization) is firmly substantiated, the AI detected missing documentation on cross-team governance and organizational SOC2 compliance.
+            </p>
+</div>
+<div class="shrink-0 flex md:flex-col gap-2 w-full md:w-auto">
+<button class="w-full md:w-auto px-4 py-2 rounded-lg bg-surface border border-outline-variant text-slate-700 hover:bg-slate-100 font-medium text-xs text-center transition-colors" type="button">
+              View Raw Signals
+            </button>
+</div>
+</div>
+<!-- Requirement Analysis Tri-Section (State Breakdown Cards) -->
+<div class="flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<h2 class="font-headline text-xl font-bold text-slate-900">Requirement Verification Matrix</h2>
+<p class="text-xs text-slate-500">Every qualification parsed from the job description verified against documented resume evidence</p>
+</div>
+<div class="flex items-center gap-1 bg-white border border-outline-variant p-1 rounded-lg text-xs shadow-2xs">
+<button class="px-3 py-1 rounded bg-slate-900 text-white font-medium" type="button">All (21)</button>
+<button class="px-3 py-1 rounded text-slate-600 hover:bg-slate-100" type="button">Matched (14)</button>
+<button class="px-3 py-1 rounded text-slate-600 hover:bg-slate-100" type="button">Gaps (7)</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- 1. Matched Requirements -->
+<div class="bg-white border border-outline-variant rounded-xl p-5 flex flex-col gap-4 shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+<h3 class="font-headline text-base font-bold text-slate-900">Matched</h3>
+</div>
+<span class="font-mono text-xs px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold">14 Verified</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1.5">
+<span class="text-xs font-bold text-slate-900">6+ years designing web applications</span>
+<p class="text-xs text-slate-600">Evidenced in Senior/Staff product roles at Stripe (3.5y) and Datadog (2.8y).</p>
+<div class="mt-1 flex items-center gap-1 font-mono text-[11px] text-emerald-600 font-medium">
+<span class="material-symbols-outlined text-[14px]">link</span>
+<span>Experience Chronology Confirmed</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1.5">
+<span class="text-xs font-bold text-slate-900">Figma Design Token architecture</span>
+<p class="text-xs text-slate-600">Directly referenced in Datadog Design Systems bullet: unified 1,200+ tokens.</p>
+<div class="mt-1 flex items-center gap-1 font-mono text-[11px] text-emerald-600 font-medium">
+<span class="material-symbols-outlined text-[14px]">link</span>
+<span>Keyword &amp; Semantic Match</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1.5">
+<span class="text-xs font-bold text-slate-900">Component code parity (React/TypeScript)</span>
+<p class="text-xs text-slate-600">Documented cross-functional sync with frontend engineering teams.</p>
+<div class="mt-1 flex items-center gap-1 font-mono text-[11px] text-emerald-600 font-medium">
+<span class="material-symbols-outlined text-[14px]">link</span>
+<span>Technical Proficiency Verified</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-auto py-1 text-center text-primary font-mono text-xs font-semibold hover:underline" type="button">
+                View 11 more matched requirements →
+              </button>
+</div>
+<!-- 2. Partially Matched Requirements -->
+<div class="bg-white border border-outline-variant rounded-xl p-5 flex flex-col gap-4 shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+<h3 class="font-headline text-base font-bold text-slate-900">Partially Matched</h3>
+</div>
+<span class="font-mono text-xs px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-semibold">4 Needs Detail</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1.5">
+<span class="text-xs font-bold text-slate-900">Cross-functional engineering leadership</span>
+<p class="text-xs text-slate-600">Mentioned in summary section, but lacks quantifiable organizational metrics or headcount.</p>
+<div class="mt-1 flex items-center gap-1 font-mono text-[11px] text-amber-700 font-medium">
+<span class="material-symbols-outlined text-[14px]">lightbulb</span>
+<span>Suggested: Add squad size &amp; engineer ratio</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1.5">
+<span class="text-xs font-bold text-slate-900">Generative AI workflow integrations</span>
+<p class="text-xs text-slate-600">Mentioned prompt engineering in personal skills, but missing practical pipeline impact.</p>
+<div class="mt-1 flex items-center gap-1 font-mono text-[11px] text-amber-700 font-medium">
+<span class="material-symbols-outlined text-[14px]">lightbulb</span>
+<span>Suggested: State prompt evaluation tools used</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1.5">
+<span class="text-xs font-bold text-slate-900">Enterprise accessibility tooling</span>
+<p class="text-xs text-slate-600">Listed WCAG 2.1 AA knowledge without specifying automated test suites.</p>
+<div class="mt-1 flex items-center gap-1 font-mono text-[11px] text-amber-700 font-medium">
+<span class="material-symbols-outlined text-[14px]">lightbulb</span>
+<span>Suggested: Mention Axe-core or Stark usage</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-auto py-1 text-center text-amber-700 font-mono text-xs font-semibold hover:underline" type="button">
+                View 1 more partial requirement →
+              </button>
+</div>
+<!-- 3. Not Evidenced (Strategic Gaps) -->
+<div class="bg-white border border-outline-variant rounded-xl p-5 flex flex-col gap-4 shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+<h3 class="font-headline text-base font-bold text-slate-900">Not Evidenced</h3>
+</div>
+<span class="font-mono text-xs px-2.5 py-0.5 rounded-full bg-rose-50 border border-rose-200 text-rose-700 font-semibold">3 Missing</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1.5">
+<span class="text-xs font-bold text-slate-900">Experience leading SOC2 compliance accessibility audits</span>
+<p class="text-xs text-slate-600">Zero mention in resume text. Flagged as a prioritized requirement by Scale AI hiring team.</p>
+<div class="mt-1 flex items-center gap-1 font-mono text-[11px] text-rose-600 font-medium">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>Critical Hiring Filter</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1.5">
+<span class="text-xs font-bold text-slate-900">Model evaluation benchmarking interfaces</span>
+<p class="text-xs text-slate-600">No direct evidence of designing human-in-the-loop ML annotation tooling.</p>
+<div class="mt-1 flex items-center gap-1 font-mono text-[11px] text-rose-600 font-medium">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>Domain Specific Blindspot</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1.5">
+<span class="text-xs font-bold text-slate-900">Executive design KPI reporting</span>
+<p class="text-xs text-slate-600">No documented history of C-suite OKR or design system adoption dashboards.</p>
+<div class="mt-1 flex items-center gap-1 font-mono text-[11px] text-slate-500 font-medium">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span>Secondary Priority Gap</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-auto py-1 text-center text-slate-500 font-mono text-xs hover:text-slate-800" type="button">
+                All 3 critical gaps listed above
+              </button>
+</div>
+</div>
+</div>
+<!-- Interactive Evidence Explorer -->
+<div class="bg-white border border-outline-variant rounded-xl p-7 flex flex-col gap-6 shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-outline-variant">
+<div>
+<span class="font-label text-xs uppercase tracking-wider font-bold text-primary">Deep Inspection</span>
+<h2 class="font-headline text-xl font-bold text-slate-900">Interactive Semantic Evidence Explorer</h2>
+<p class="text-xs text-slate-500">Compare how resume statements mathematically map to job posting expectations</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs text-slate-500">Showing Match 1 of 21</span>
+<div class="flex items-center gap-1">
+<button aria-label="Previous match" class="p-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button aria-label="Next match" class="p-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Semantic Match Comparative View -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Job Requirement Box -->
+<div class="bg-surface-container-low border border-outline-variant p-5 rounded-xl flex flex-col justify-between gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs text-slate-500 uppercase tracking-wider font-bold">Scale AI Requirement #04</span>
+<span class="font-mono text-xs text-primary bg-primary-container border border-primary/20 px-2 py-0.5 rounded font-semibold">Core Competency</span>
+</div>
+<p class="font-headline text-base text-slate-900 font-semibold italic mt-2">
+                  "Experience building machine learning models and evaluating inference pipelines."
+                </p>
+</div>
+<div class="flex items-center gap-2 font-mono text-xs text-slate-500 pt-2 border-t border-slate-200/60">
+<span class="material-symbols-outlined text-[16px] text-slate-400">travel_explore</span>
+<span>Extracted from Section: "Key Responsibilities"</span>
+</div>
+</div>
+<!-- Resume Evidence Box -->
+<div class="bg-surface-container-low border border-outline-variant p-5 rounded-xl flex flex-col justify-between gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs text-slate-500 uppercase tracking-wider font-bold">Candidate Resume Text (Datadog)</span>
+<span class="font-mono text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded font-semibold">Matched Bullet</span>
+</div>
+<p class="font-headline text-base text-slate-900 font-semibold italic mt-2">
+                  "Developed classification models using Python and Scikit-learn with 94% precision."
+                </p>
+</div>
+<div class="flex items-center gap-2 font-mono text-xs text-slate-500 pt-2 border-t border-slate-200/60">
+<span class="material-symbols-outlined text-[16px] text-slate-400">description</span>
+<span>Resume Page 1, Bullet 3 • Experience Block</span>
+</div>
+</div>
+</div>
+<!-- Vector Result Banner -->
+<div class="bg-primary-container/40 border border-primary/20 p-4 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-white border border-primary/20 flex items-center justify-center shrink-0 shadow-2xs">
+<span class="font-mono text-lg font-bold text-primary">89%</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-slate-900">Supported (Strong Semantic Equivalence)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+</div>
+<p class="text-xs text-slate-600 mt-0.5">
+                  Model determined high contextual alignment. <span class="text-slate-900 font-semibold">Recommendation:</span> Clarify model latency and pipeline orchestration tools (e.g., Airflow, Ray).
+                </p>
+</div>
+</div>
+<button class="shrink-0 px-4 py-2 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary-dark transition-all shadow-sm" type="button">
+              Apply AI Rewrite
+            </button>
+</div>
+</div>
+<!-- Dual Row: ATS Readability Health Card + Prioritized AI Recommendations -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- ATS Readability Health Card -->
+<div class="lg:col-span-6 bg-white border border-outline-variant rounded-xl p-7 flex flex-col justify-between shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+<div class="flex flex-col gap-1 pb-4 border-b border-outline-variant">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs uppercase tracking-wider font-bold text-primary">Parsing Integrity</span>
+<span class="px-2 py-0.5 rounded bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-semibold">100% Parsed</span>
+</div>
+<h2 class="font-headline text-lg font-bold text-slate-900">ATS Readability Health Check</h2>
+<p class="text-xs text-slate-500">Automated validation against Taleo, Workday, Greenhouse, and Lever ingest rules</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-5">
+<!-- Check 1 -->
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-slate-900">Text Extraction</span>
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span>
+</div>
+<span class="font-mono text-xs text-emerald-700 font-semibold">Clean (100% UTF-8)</span>
+<p class="text-xs text-slate-500 leading-snug">No unsupported font ligatures or hidden OCR glyph errors.</p>
+</div>
+<!-- Check 2 -->
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-slate-900">Section Headers</span>
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span>
+</div>
+<span class="font-mono text-xs text-emerald-700 font-semibold">Standard Validated</span>
+<p class="text-xs text-slate-500 leading-snug">Experience, Education, Skills, and Projects recognized cleanly.</p>
+</div>
+<!-- Check 3 -->
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-slate-900">Contact Metadata</span>
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span>
+</div>
+<span class="font-mono text-xs text-emerald-700 font-semibold">Fully Accessible</span>
+<p class="text-xs text-slate-500 leading-snug">Email, LinkedIn profile URL, and location parsed without truncation.</p>
+</div>
+<!-- Check 4 -->
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-slate-900">Layout Structure</span>
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span>
+</div>
+<span class="font-mono text-xs text-emerald-700 font-semibold">0 Warnings</span>
+<p class="text-xs text-slate-500 leading-snug">Single-column flow compliant. No embedded multi-column tables.</p>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant flex items-center justify-between text-slate-500 text-xs">
+<span>Overall Parser Score: <strong class="text-slate-900 font-bold">9.9 / 10</strong></span>
+<span class="text-primary hover:underline cursor-pointer font-mono font-medium">View Raw JSON Ingestion</span>
+</div>
+</div>
+<!-- Prioritized AI Recommendations Card -->
+<div class="lg:col-span-6 bg-white border border-outline-variant rounded-xl p-7 flex flex-col justify-between shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+<div class="flex flex-col gap-1 pb-4 border-b border-outline-variant">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs uppercase tracking-wider font-bold text-primary">High Impact</span>
+<span class="px-2 py-0.5 rounded bg-primary-container border border-primary/20 text-primary font-mono text-xs font-bold">+12% Potential Lift</span>
+</div>
+<h2 class="font-headline text-lg font-bold text-slate-900">Prioritized Action Items</h2>
+<p class="text-xs text-slate-500">Exact steps to elevate resume alignment above the 80% recruiter benchmark</p>
+</div>
+<div class="flex flex-col gap-3 my-4">
+<!-- Item 1 -->
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex items-start gap-3 group hover:border-primary/40 hover:bg-slate-50 transition-all">
+<span class="w-6 h-6 rounded-full bg-primary-container text-primary font-mono text-xs flex items-center justify-center shrink-0 font-bold mt-0.5 border border-primary/20">1</span>
+<div class="flex flex-col gap-0.5 flex-1">
+<span class="text-xs font-bold text-slate-900 group-hover:text-primary transition-colors">
+                    Surface Scikit-learn Project in Summary
+                  </span>
+<p class="text-xs text-slate-600">
+                    Highlight your existing Scikit-learn machine learning experience directly in the opening executive summary section to trigger early recruiter keyword scans.
+                  </p>
+</div>
+<button class="shrink-0 text-primary hover:text-primary-dark transition-colors font-mono text-xs font-semibold self-center" type="button">Apply</button>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex items-start gap-3 group hover:border-primary/40 hover:bg-slate-50 transition-all">
+<span class="w-6 h-6 rounded-full bg-primary-container text-primary font-mono text-xs flex items-center justify-center shrink-0 font-bold mt-0.5 border border-primary/20">2</span>
+<div class="flex flex-col gap-0.5 flex-1">
+<span class="text-xs font-bold text-slate-900 group-hover:text-primary transition-colors">
+                    Quantify Model Evaluation Metrics in Bullet #3
+                  </span>
+<p class="text-xs text-slate-600">
+                    Make model evaluation metrics more visible in bullet point #3 by detailing business impact (e.g., latency reduction from 400ms to 120ms).
+                  </p>
+</div>
+<button class="shrink-0 text-primary hover:text-primary-dark transition-colors font-mono text-xs font-semibold self-center" type="button">Apply</button>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-low border border-outline-variant p-3.5 rounded-lg flex items-start gap-3 group hover:border-primary/40 hover:bg-slate-50 transition-all">
+<span class="w-6 h-6 rounded-full bg-primary-container text-primary font-mono text-xs flex items-center justify-center shrink-0 font-bold mt-0.5 border border-primary/20">3</span>
+<div class="flex flex-col gap-0.5 flex-1">
+<span class="text-xs font-bold text-slate-900 group-hover:text-primary transition-colors">
+                    Articulate Microservices &amp; API Architecture
+                  </span>
+<p class="text-xs text-slate-600">
+                    Clarify your API development and microservice experience if applicable, bridging the gap to Scale AI's infrastructure-heavy role requirements.
+                  </p>
+</div>
+<button class="shrink-0 text-primary hover:text-primary-dark transition-colors font-mono text-xs font-semibold self-center" type="button">Apply</button>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant flex items-center justify-between">
+<span class="font-mono text-xs text-slate-500">Automatic Optimization Engine Ready</span>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface border border-outline-variant text-slate-700 hover:bg-slate-100 transition-colors text-xs font-semibold flex items-center gap-1.5 shadow-2xs" type="button">
+<span>Open Optimization Studio</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Recruiter Perspective Banner -->
+<div class="bg-white border border-outline-variant rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-5 shadow-[0_1px_4px_rgba(0,0,0,0.04)] mb-4">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-primary-container border border-primary/20 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">psychology</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-900">Recruiter Simulation Verdict</span>
+<span class="text-xs text-slate-600 leading-normal">
+                A hiring manager at Scale AI would likely invite you for a Screening Call based on strong systems foundations, but may request technical design portfolio samples early.
+              </span>
+</div>
+</div>
+<div class="flex items-center gap-2.5 shrink-0">
+<button class="px-4 py-2 rounded-lg bg-white border border-outline-variant text-slate-700 hover:bg-slate-50 text-xs font-semibold shadow-2xs transition-colors" type="button">
+              Simulate Interview Questions
+            </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary-dark transition-all shadow-sm" type="button">
+              One-Click Rewrite All Gaps
+            </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,14 @@
+Machine Learning Engineer Intern
+
+Required qualifications:
+- Python and scikit-learn experience.
+- Currently enrolled in a Bachelor's degree in Computer Science.
+- Familiarity with Docker.
+- Experience with PyTorch.
+
+Responsibilities:
+- Evaluate models using cross-validation and document findings.
+
+Preferred qualifications:
+- SQL for querying datasets.
+- Azure AI Fundamentals (AI-900) certification.

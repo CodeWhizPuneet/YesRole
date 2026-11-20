@@ -1,0 +1,152 @@
+[
+  {
+    "name": "exact Python",
+    "job": "Proficiency with Python.",
+    "resume": "Skills\nPython, pandas\nProjects\nBuilt a Python ETL tool for weather records.",
+    "expected": "Supported"
+  },
+  {
+    "name": "SQL alias",
+    "job": "Knowledge of structured query language.",
+    "resume": "Experience\nQueried fundraising records with SQL and joined the donor tables.",
+    "expected": "Supported"
+  },
+  {
+    "name": "Kubernetes alias",
+    "job": "Experience working with Kubernetes.",
+    "resume": "Experience\nDeployed workloads to a k8s cluster and maintained service manifests.",
+    "expected": "Supported"
+  },
+  {
+    "name": "alternative tools",
+    "job": "Experience with Django or FastAPI.",
+    "resume": "Projects\nDeveloped a campus announcement app using Django and PostgreSQL.",
+    "expected": "Supported"
+  },
+  {
+    "name": "named degree",
+    "job": "Bachelor's degree in Computer Science required.",
+    "resume": "Education\nBachelor of Science in Computer Science, May 2024.",
+    "expected": "Supported"
+  },
+  {
+    "name": "currently enrolled",
+    "job": "Currently enrolled in a Bachelor's degree in Computer Science.",
+    "resume": "Education\nBachelor's in Computer Science, currently enrolled, expected May 2027.",
+    "expected": "Supported"
+  },
+  {
+    "name": "completed credential",
+    "job": "Microsoft Azure Fundamentals (AZ-900) certification.",
+    "resume": "Certifications\nAZ-900, Microsoft Certified. Awarded in June 2024.",
+    "expected": "Supported"
+  },
+  {
+    "name": "explicit experience",
+    "job": "3 years of professional experience with Python.",
+    "resume": "Summary\n4 years of professional experience with Python for payment services.",
+    "expected": "Supported"
+  },
+  {
+    "name": "same task wording",
+    "job": "Build and maintain REST APIs for payments.",
+    "resume": "Experience\nBuilt and maintained REST APIs for payments and transaction reports.",
+    "expected": "Supported"
+  },
+  {
+    "name": "responsibility paraphrase",
+    "job": "Analyze survey responses and report trends.",
+    "resume": "Experience\nAnalyzed questionnaire responses and summarized trends for the research team.",
+    "expected": "Supported"
+  },
+  {
+    "name": "different framework",
+    "job": "Experience with PyTorch is required.",
+    "resume": "Projects\nTrained image classifiers in TensorFlow for plant diseases.",
+    "expected": "Partially Supported"
+  },
+  {
+    "name": "partial tool group",
+    "job": "Experience using Python and Docker.",
+    "resume": "Projects\nDeveloped a Python pipeline for classifying bug reports.",
+    "expected": "Partially Supported"
+  },
+  {
+    "name": "related dashboard software",
+    "job": "Tableau is preferred.",
+    "resume": "Experience\nCreated sales dashboards with Power BI for retail locations.",
+    "expected": "Partially Supported"
+  },
+  {
+    "name": "short experience",
+    "job": "3 years of professional experience with Python.",
+    "resume": "Experience\n2 years of professional experience with Python, automated invoicing.",
+    "expected": "Partially Supported"
+  },
+  {
+    "name": "only dates",
+    "job": "3 years of professional experience with Python.",
+    "resume": "Experience\nSoftware Developer | 2022 – 2026\nMaintained pricing services in Python.",
+    "expected": "Partially Supported"
+  },
+  {
+    "name": "degree in progress",
+    "job": "Bachelor's degree in Computer Science required.",
+    "resume": "Education\nBachelor's in Computer Science, in progress, expected June 2027.",
+    "expected": "Partially Supported"
+  },
+  {
+    "name": "different degree field",
+    "job": "Bachelor's degree in Statistics required.",
+    "resume": "Education\nBachelor's in Business Administration, May 2024.",
+    "expected": "Partially Supported"
+  },
+  {
+    "name": "missing Docker",
+    "job": "Docker experience is required.",
+    "resume": "Projects\nTrained a Python classifier with pandas and scikit-learn.",
+    "expected": "Not Evidenced"
+  },
+  {
+    "name": "missing certification",
+    "job": "Microsoft Azure AI Fundamentals (AI-900) certification required.",
+    "resume": "Skills\nAzure, Python\nProjects\nDeployed a classifier to Azure compute.",
+    "expected": "Not Evidenced"
+  },
+  {
+    "name": "studying for certification",
+    "job": "Microsoft Azure Fundamentals (AZ-900) certification.",
+    "resume": "Certifications\nPreparing for AZ-900 and completing Azure practice exercises.",
+    "expected": "Not Evidenced"
+  },
+  {
+    "name": "project duration is not employment",
+    "job": "3 years of professional experience with Python.",
+    "resume": "Projects\nBuilt a personal Python project over four years to manage a library.",
+    "expected": "Not Evidenced"
+  },
+  {
+    "name": "negated skill",
+    "job": "Docker experience is required.",
+    "resume": "Summary\nNo experience with Docker. Built scripts using Bash and Python.",
+    "expected": "Not Evidenced"
+  },
+  {
+    "name": "unrelated technologies",
+    "job": "Proficiency with PyTorch and Docker.",
+    "resume": "Skills\nExcel and Power BI\nExperience\nPrepared monthly operating budgets for the cafeteria.",
+    "expected": "Not Evidenced"
+  },
+  {
+    "name": "unknown tool with no evidence",
+    "job": "Experience working with Fivetran.",
+    "resume": "Experience\nCreated weekly point-of-sale charts for a retail store.",
+    "expected": "Not Evidenced"
+  },
+  {
+    "name": "unsupported task",
+    "job": "Deploy application code to production.",
+    "resume": "Projects\nDesigned illustration templates and edited wedding photographs.",
+    "expected": "Not Evidenced"
+  }
+]
