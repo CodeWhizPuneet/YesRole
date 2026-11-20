@@ -34,37 +34,35 @@ def create_app(directory: Path, password: str):
             await api(scope, receive, send)
             return
         path = scope["path"]
+
+        # Health check — no auth required
         if path == "/healthz" and scope["method"] == "GET":
             await JSONResponse({"status": "ok"})(scope, receive, send)
             return
-        headers = dict(scope["headers"])
-        scheme, _, token = headers.get(b"authorization", b"").partition(b" ")
-        try:
-            authorized = scheme.lower() == b"basic" and hmac.compare_digest(
-                base64.b64decode(token, validate=True), credentials
-            )
-        except binascii.Error:
-            authorized = False
-        if not authorized:
-            await PlainTextResponse("Sign in to view the YesRole demo.", status_code=401, headers={
-                "WWW-Authenticate": 'Basic realm="YesRole Demo"',
-                "Cache-Control": "no-store",
-            })(scope, receive, send)
+
+        # API routes — require Basic Auth, return JSON 401 (no WWW-Authenticate so browser won't pop up)
+        if path == "/api" or path.startswith("/api/"):
+            headers = dict(scope["headers"])
+            scheme, _, token = headers.get(b"authorization", b"").partition(b" ")
+            try:
+                authorized = scheme.lower() == b"basic" and hmac.compare_digest(
+                    base64.b64decode(token, validate=True), credentials
+                )
+            except binascii.Error:
+                authorized = False
+            if not authorized:
+                await JSONResponse({"detail": "Unauthorized"}, status_code=401, headers={
+                    "Cache-Control": "no-store",
+                })(scope, receive, send)
+                return
+            await api(scope, receive, send)
             return
 
-        async def private_response(message):
-            if message["type"] == "http.response.start":
-                response_headers = [(name, value) for name, value in message.get("headers", []) if name != b"cache-control"]
-                message = {**message, "headers": [*response_headers, (b"cache-control", b"private, no-store")]}
-            await send(message)
-
-        if path == "/api" or path.startswith("/api/"):
-            await api(scope, receive, private_response)
-        else:
-            try:
-                await frontend(scope, receive, private_response)
-            except HTTPException as error:
-                await PlainTextResponse(error.detail, status_code=error.status_code)(scope, receive, private_response)
+        # Static frontend files — no auth, React handles login
+        try:
+            await frontend(scope, receive, send)
+        except HTTPException as error:
+            await PlainTextResponse(error.detail, status_code=error.status_code)(scope, receive, send)
 
     return hosted
 

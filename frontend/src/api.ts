@@ -3,12 +3,40 @@ import type { Analysis, AnalyzeInput, Parsed, Requirement, Suggestion, Summary }
 const base = (import.meta.env.VITE_API_URL ?? '').replace(/\/$/, '')
 export const hostedDemo = import.meta.env.VITE_HOSTED_DEMO === 'true'
 
+// --- Credential management ---
+const STORAGE_KEY = 'yesrole_auth'
+let _credentials: string | null = sessionStorage.getItem(STORAGE_KEY)
+
+export function setCredentials(username: string, password: string) {
+  _credentials = btoa(`${username}:${password}`)
+  sessionStorage.setItem(STORAGE_KEY, _credentials)
+}
+
+export function clearCredentials() {
+  _credentials = null
+  sessionStorage.removeItem(STORAGE_KEY)
+}
+
+export function hasCredentials(): boolean {
+  return _credentials !== null
+}
+
 async function request(path: string, init?: RequestInit) {
+  const extraHeaders: Record<string, string> = {}
+  if (_credentials) extraHeaders['Authorization'] = `Basic ${_credentials}`
   let response: Response
   try {
-    response = await fetch(base + '/api' + path, init)
+    response = await fetch(base + '/api' + path, {
+      ...init,
+      headers: { ...(init?.headers as Record<string, string>), ...extraHeaders },
+    })
   } catch {
     throw new Error('Could not reach the local YesRole API. Check that the backend is running.')
+  }
+  if (response.status === 401) {
+    clearCredentials()
+    window.dispatchEvent(new Event('yesrole:unauthorized'))
+    throw new Error('Session expired. Please sign in again.')
   }
   if (!response.ok) {
     const body = await response.json().catch(() => null)
